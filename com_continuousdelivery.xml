@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="component" version="3.7.0" method="upgrade">
+  <name>COM_CONTINUOUSDELIVERY</name>
+  <creationDate>May 2017</creationDate>
+  <copyright>COM_CONTINUOUSDELIVERY_COPYRIGHT</copyright>
+  <license>COM_CONTINUOUSDELIVERY_LICENSE</license>
+  <author>Clay Freeman</author>
+  <authorEmail>cdagent@clayfreeman.com</authorEmail>
+  <authorUrl>http://clayfreeman.com</authorUrl>
+  <version>0.1</version>
+  <description>COM_CONTINUOUSDELIVERY_DESCRIPTION</description>
+  <scriptfile>script.php</scriptfile>
+  <files folder="site">
+    <filename>continuousdelivery.php</filename>
+    <filename>controller.php</filename>
+    <filename>index.html</filename>
+  </files>
+  <languages folder="language">
+    <language tag="en-US">en-US.com_continuousdelivery.ini</language>
+  </languages>
+  <administration>
+    <files folder="administrator">
+      <filename>config.xml</filename>
+      <filename>index.html</filename>
+    </files>
+    <languages folder="language">
+      <language tag="en-US">en-US.com_continuousdelivery.sys.ini</language>
+    </languages>
+  </administration>
+</extension>

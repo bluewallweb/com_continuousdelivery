@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config>
+  <fieldset name="settings"
+      label="COM_CONTINUOUSDELIVERY_FIELDSET_SETTINGS_LABEL"
+      description="COM_CONTINUOUSDELIVERY_FIELDSET_SETTINGS_DESCRIPTION">
+    <field name="deployKey" type="text" disabled="1" size="32"
+        label="COM_CONTINUOUSDELIVERY_FIELD_DEPLOYKEY_LABEL"
+        description="COM_CONTINUOUSDELIVERY_FIELD_DEPLOYKEY_DESCRIPTION">
+    </field>
+  </fieldset>
+</config>
