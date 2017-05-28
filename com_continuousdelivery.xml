@@ -16,6 +16,7 @@
     <filename>index.html</filename>
   </files>
   <languages folder="language">
+    <language tag="en-GB">en-GB.com_continuousdelivery.ini</language>
     <language tag="en-US">en-US.com_continuousdelivery.ini</language>
   </languages>
   <administration>
@@ -24,6 +25,7 @@
       <filename>index.html</filename>
     </files>
     <languages folder="language">
+      <language tag="en-GB">en-GB.com_continuousdelivery.sys.ini</language>
       <language tag="en-US">en-US.com_continuousdelivery.sys.ini</language>
     </languages>
   </administration>
