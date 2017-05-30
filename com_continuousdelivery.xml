@@ -25,6 +25,7 @@
   <administration>
     <files folder="administrator">
       <filename>config.xml</filename>
+      <filename>continuousdelivery.php</filename>
       <filename>index.html</filename>
     </files>
     <languages folder="language">
