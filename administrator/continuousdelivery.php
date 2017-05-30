@@ -1,3 +1,3 @@
 <?php
   // Redirect to the site root
-  JApplication::redirect(JRoute::_('/'));
+  JFactory::getApplication()->redirect(JRoute::_('/'));
