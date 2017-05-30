@@ -31,7 +31,7 @@
      * This constructor fetches the installed component's parameters and
      * database extension ID.
      */
-    public function __construct() {
+    protected function construct() {
       $name         = 'com_continuousdelivery';
       // Fetch a reference to the required operational instances
       $this->params = JComponentHelper::getParams($name);
@@ -50,6 +50,8 @@
      * @param   object  $parent  The caller of this script.
      */
     public function postflight($type, $parent) {
+      // Give our half-real constructor a chance to prepare the instance
+      $this->construct();
       // Check if a deploy key was already generated
       if (!preg_match('/^[a-f0-9]{32}$/', $this->params->get('deployKey')))
         // Assign a random value to the deploy key parameter
