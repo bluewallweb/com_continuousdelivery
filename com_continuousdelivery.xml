@@ -10,14 +10,18 @@
   <version>0.1</version>
   <description>COM_CONTINUOUSDELIVERY_DESCRIPTION</description>
   <scriptfile>script.php</scriptfile>
-  <files>
+  <files folder="site">
     <folder>language</folder>
-    <folder>site</folder>
+    <filename>continuousdelivery.php</filename>
+    <filename>controller.php</filename>
+    <filename>index.html</filename>
   </files>
   <administration>
-    <files>
-      <folder>admin</folder>
+    <files folder="admin">
       <folder>language</folder>
+      <filename>config.xml</filename>
+      <filename>continuousdelivery.php</filename>
+      <filename>index.html</filename>
     </files>
   </administration>
 </extension>
