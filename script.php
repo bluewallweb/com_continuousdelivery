@@ -66,10 +66,10 @@
      */
     protected function cleanCache() {
       // Fetch the cache path for this Joomla installation
-      $default = implode(DIRECTORY_SEPARATOR, [JPATH_SITE, 'cache']);
+      $default = implode(DIRECTORY_SEPARATOR, array(JPATH_SITE, 'cache'));
       $cache   = JFactory::getConfig()->get('cache_path', $default);
       // Define an array of options to pass to JCache::getInstance()
-      $options = ['defaultgroup' => '_system', 'cachebase' => $cache];
+      $options = array('defaultgroup' => '_system', 'cachebase' => $cache);
       // Clear the '_system' cache using the JCache instance
       return JCache::getInstance('callback', $options)->clean('_system');
     }
@@ -89,7 +89,7 @@
       // Fetch this extension's record from the database
       $table = JTable::getInstance('extension'); $table->load($this->id);
       // Re-assign the parameters for this extension using our instance values
-      return $table->bind(['params' => $update]) &&
+      return $table->bind(array('params' => $update)) &&
         $table->store() && $this->cleanCache();
     }
   }
