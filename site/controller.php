@@ -91,7 +91,7 @@
           // Move the file into Joomla's temporary directory
           jimport('joomla.filesystem.file');
           $tmp_dest  = implode(DIRECTORY_SEPARATOR,
-            [$this->config->get('tmp_path'), $package['name']]);
+            array($this->config->get('tmp_path'), $package['name']));
       		JFile::upload($package['tmp_name'], $tmp_dest, false, true);
           // Attempt to unpack the uploaded file using `JInstallerHelper`
           $package   = JInstallerHelper::unpack($tmp_dest, true);
@@ -102,7 +102,7 @@
           JInstallerHelper::cleanupInstall(
             $package['packagefile'], $package['extractdir']);
           // Print a response detailing the result of the installation
-          if ($result === true) echo json_encode(['success' => true]);
+          if ($result === true) echo json_encode(array('success' => true));
           else echo json_encode(['error' => JText::_(
             'COM_CONTINUOUSDELIVERY_INSTALL_ERROR')]);
         } else echo json_encode(['error' => JText::_(
