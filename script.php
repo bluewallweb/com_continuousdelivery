@@ -6,6 +6,7 @@
    * @license    GNU Lesser General Public License v3 (LGPL-3.0).
    */
 
+  use Joomla\CMS\Cache\Cache;
   use Joomla\CMS\Component\ComponentHelper;
   use Joomla\CMS\Factory;
   use Joomla\CMS\Table\Table;
@@ -75,7 +76,7 @@
       // Define an array of options to pass to JCache::getInstance()
       $options = array('defaultgroup' => '_system', 'cachebase' => $cache);
       // Clear the '_system' cache using the JCache instance
-      return JCache::getInstance('callback', $options)->clean('_system');
+      return Cache::getInstance('callback', $options)->clean('_system');
     }
 
     /**
