@@ -6,6 +6,8 @@
    * @license    GNU Lesser General Public License v3 (LGPL-3.0).
    */
 
+  use Joomla\CMS\Factory;
+
   /**
    * This class serves to run during the 'postflight' phase of the component's
    * installation so that a deploy key can be randomly generated.
@@ -67,7 +69,7 @@
     protected function cleanCache() {
       // Fetch the cache path for this Joomla installation
       $default = implode(DIRECTORY_SEPARATOR, array(JPATH_SITE, 'cache'));
-      $cache   = JFactory::getConfig()->get('cache_path', $default);
+      $cache   = Factory::getConfig()->get('cache_path', $default);
       // Define an array of options to pass to JCache::getInstance()
       $options = array('defaultgroup' => '_system', 'cachebase' => $cache);
       // Clear the '_system' cache using the JCache instance
