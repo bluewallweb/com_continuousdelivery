@@ -6,15 +6,21 @@
    * @license    GNU Lesser General Public License v3 (LGPL-3.0).
    */
 
+  use Joomla\CMS\Factory;
+  use Joomla\CMS\Filesystem\File;
+  use Joomla\CMS\Installer\Installer;
+  use Joomla\CMS\Installer\InstallerHelper;
+  use Joomla\CMS\MVC\Controller\BaseController;
+
   /**
    * This class serves as the primary controller for the Continuous Delivery
    * Joomla component.
    */
-  class ContinuousDeliveryController extends JControllerLegacy {
+  class ContinuousDeliveryController extends BaseController {
     /**
      * A reference to Joomla's application object.
      *
-     * @var  JApplicationCms
+     * @var  Joomla\CMS\Application\CMSApplication
      */
     protected $app    = null;
 
@@ -35,7 +41,7 @@
     /**
      * An input instance for uploaded files.
      *
-     * @var  JInputFiles
+     * @var  Joomla\CMS\Input\Files
      */
     protected $files  = null;
 
@@ -56,8 +62,8 @@
       // Run the parent constructor to setup this instance
       parent::__construct();
       // Fetch a reference to the required operational instances
-      $this->app    = JFactory::getApplication();
-      $this->config = JFactory::getConfig();
+      $this->app    = Factory::getApplication();
+      $this->config = Factory::getConfig();
       $this->files  = $this->input->files;
       $this->params = $this->app->getParams();
       // Fetch the component's configured deploy key
@@ -92,14 +98,14 @@
           jimport('joomla.filesystem.file');
           $tmp_dest  = implode(DIRECTORY_SEPARATOR,
             array($this->config->get('tmp_path'), $package['name']));
-      		JFile::upload($package['tmp_name'], $tmp_dest, false, true);
+      		File::upload($package['tmp_name'], $tmp_dest, false, true);
           // Attempt to unpack the uploaded file using `JInstallerHelper`
-          $package   = JInstallerHelper::unpack($tmp_dest, true);
+          $package   = InstallerHelper::unpack($tmp_dest, true);
           // Attempt to install the unpacked extension using `JInstaller`
-          $installer = JInstaller::getInstance();
+          $installer = Installer::getInstance();
           $result    = $installer->install($package['dir']);
           // Clean up the temporary files (uploaded package, unpacked directory)
-          JInstallerHelper::cleanupInstall(
+          InstallerHelper::cleanupInstall(
             $package['packagefile'], $package['extractdir']);
           // Print a response detailing the result of the installation
           if ($result === true) echo json_encode(array('success' => true));
