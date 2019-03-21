@@ -6,6 +6,7 @@
    * @license    GNU Lesser General Public License v3 (LGPL-3.0).
    */
 
+  use Joomla\CMS\Component\ComponentHelper;
   use Joomla\CMS\Factory;
   use Joomla\CMS\Table\Table;
 
@@ -37,9 +38,9 @@
     protected function construct() {
       $name         = 'com_continuousdelivery';
       // Fetch a reference to the required operational instances
-      $this->params = JComponentHelper::getParams($name);
+      $this->params = ComponentHelper::getParams($name);
       // Determine this extension's ID number
-      $this->id     = JComponentHelper::getComponent($name)->id;
+      $this->id     = ComponentHelper::getComponent($name)->id;
     }
 
     /**
