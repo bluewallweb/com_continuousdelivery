@@ -7,6 +7,7 @@
    */
 
   use Joomla\CMS\Factory;
+  use Joomla\CMS\Table\Table;
 
   /**
    * This class serves to run during the 'postflight' phase of the component's
@@ -89,7 +90,7 @@
       // Assign the requested key/value pair to the Registry instance
       $this->params->set($name, $value); $update = $this->params->toString();
       // Fetch this extension's record from the database
-      $table = JTable::getInstance('extension'); $table->load($this->id);
+      $table = Table::getInstance('extension'); $table->load($this->id);
       // Re-assign the parameters for this extension using our instance values
       return $table->bind(array('params' => $update)) &&
         $table->store() && $this->cleanCache();
