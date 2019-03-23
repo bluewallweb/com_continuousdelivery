@@ -8,6 +8,7 @@
 
   use Joomla\CMS\Factory;
   use Joomla\CMS\Filesystem\File;
+  use Joomla\CMS\Language\Text;
   use Joomla\CMS\Installer\Installer;
   use Joomla\CMS\Installer\InstallerHelper;
   use Joomla\CMS\MVC\Controller\BaseController;
@@ -109,11 +110,11 @@
             $package['packagefile'], $package['extractdir']);
           // Print a response detailing the result of the installation
           if ($result === true) echo json_encode(array('success' => true));
-          else echo json_encode(array('error' => JText::_(
+          else echo json_encode(array('error' => Text::_(
             'COM_CONTINUOUSDELIVERY_INSTALL_ERROR')));
-        } else echo json_encode(array('error' => JText::_(
+        } else echo json_encode(array('error' => Text::_(
           'COM_CONTINUOUSDELIVERY_INVALID_DEPLOY_KEY')));
-      } else echo json_encode(array('error' => JText::_(
+      } else echo json_encode(array('error' => Text::_(
         'COM_CONTINUOUSDELIVERY_UPLOAD_ERROR')));
       // It's not alright to die(); we're using the API!
       $this->app->close();
