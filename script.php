@@ -2,14 +2,14 @@
   /**
    * This file defines the installer script to be ran on component installation.
    *
-   * @copyright  Copyright 2016 Clay Freeman. All rights reserved.
+   * @copyright  Copyright 2019 Bluewall, LLC. All rights reserved.
    * @license    GNU Lesser General Public License v3 (LGPL-3.0).
    */
 
-  use Joomla\CMS\Cache\Cache;
-  use Joomla\CMS\Component\ComponentHelper;
-  use Joomla\CMS\Factory;
-  use Joomla\CMS\Table\Table;
+  use \Joomla\CMS\Cache\Cache;
+  use \Joomla\CMS\Component\ComponentHelper;
+  use \Joomla\CMS\Factory;
+  use \Joomla\CMS\Table\Table;
 
   /**
    * This class serves to run during the 'postflight' phase of the component's
@@ -37,11 +37,15 @@
      * database extension ID.
      */
     protected function construct() {
-      $name         = 'com_continuousdelivery';
-      // Fetch a reference to the required operational instances
+      $name         = 'com_continuousdelivery';   
+
+      $db           = Factory::getDbo();
+      $query        = $db->getQuery(true);
+      $query->select('extension_id')->from('#__extensions')->where('element = '.
+        $db->quote($name));
+      $this->id     = $db->setQuery($query)->loadResult();
+
       $this->params = ComponentHelper::getParams($name);
-      // Determine this extension's ID number
-      $this->id     = ComponentHelper::getComponent($name)->id;
     }
 
     /**

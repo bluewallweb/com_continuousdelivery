@@ -2,16 +2,16 @@
   /**
    * This file defines the controller for the Continuous Delivery component.
    *
-   * @copyright  Copyright 2016 Clay Freeman. All rights reserved.
+   * @copyright  Copyright 2019 Bluewall, LLC. All rights reserved.
    * @license    GNU Lesser General Public License v3 (LGPL-3.0).
    */
 
-  use Joomla\CMS\Factory;
-  use Joomla\CMS\Filesystem\File;
-  use Joomla\CMS\Language\Text;
-  use Joomla\CMS\Installer\Installer;
-  use Joomla\CMS\Installer\InstallerHelper;
-  use Joomla\CMS\MVC\Controller\BaseController;
+  use \Joomla\CMS\Factory;
+  use \Joomla\CMS\Filesystem\File;
+  use \Joomla\CMS\Language\Text;
+  use \Joomla\CMS\Installer\Installer;
+  use \Joomla\CMS\Installer\InstallerHelper;
+  use \Joomla\CMS\MVC\Controller\BaseController;
 
   /**
    * This class serves as the primary controller for the Continuous Delivery

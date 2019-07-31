@@ -4,12 +4,12 @@
   <creationDate>May 2017</creationDate>
   <copyright>COM_CONTINUOUSDELIVERY_COPYRIGHT</copyright>
   <license>COM_CONTINUOUSDELIVERY_LICENSE</license>
-  <author>Clay Freeman</author>
-  <authorEmail>cdagent@clayfreeman.com</authorEmail>
-  <authorUrl>http://clayfreeman.com</authorUrl>
-  <version>0.2</version>
+  <author>Bluewall, LLC</author>
+  <authorEmail>info@bluewall.com</authorEmail>
+  <authorUrl>https://bluewall.com</authorUrl>
+  <version>0.3</version>
   <description>COM_CONTINUOUSDELIVERY_DESCRIPTION</description>
-  <scriptfile>script.php</scriptfile>
+  <scriptfile>script.php</scriptfile> 
   <files folder="site">
     <folder>language</folder>
     <filename>continuousdelivery.php</filename>
